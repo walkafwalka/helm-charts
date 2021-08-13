@@ -12,6 +12,13 @@ Entries should include a reference to the Pull Request that introduced the chang
 
 ## Unreleased
 
+## 1.4.5
+
+* [CHANGE] Enabled enterprise authentication by default.
+  > **Breaking:** This change can cause loosing accesss to the GEM cluster in case auth.type has not
+  > been set explicitly.
+  > This is a security related change and therefore released as bugfix.
+
 ## 1.4.4
 
 * [CHANGE] Removed livenessProbe configuration as it can often be more detrimental than having none. Users can still configure livenessProbes with the per App configuration hooks. #594
