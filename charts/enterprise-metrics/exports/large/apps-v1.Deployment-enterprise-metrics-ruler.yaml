@@ -4,7 +4,7 @@ metadata:
   labels:
     app: enterprise-metrics-ruler
     app.kubernetes.io/managed-by: Helmraiser
-    chart: enterprise-metrics-1.4.4
+    chart: enterprise-metrics-1.4.5
     heritage: Helm
     release: enterprise-metrics
   name: enterprise-metrics-ruler
@@ -23,7 +23,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 03de6b95c20694aa7dff4cafe198d5c24585af0f4978295ea7a6b85657c431c0
+        checksum/config: 03061eeaa9c2359419eded176272e28e0b6f231e106afbed674926bee6dbff41
       labels:
         app: enterprise-metrics-ruler
         gossip_ring_member: "true"
