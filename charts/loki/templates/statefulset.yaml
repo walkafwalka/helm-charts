@@ -56,9 +56,13 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
-            - "-config.file=/etc/loki/loki.yaml"
+            - "-config.file=/etc/loki/loki.yaml"}
           {{- range $key, $value := .Values.extraArgs }}
-            - "-{{ $key }}={{ $value }}"
+            {{- if eq ($value | quote | len) 2 }}
+            - --{{ $key }}
+            {{- else }}
+            - --{{ $key }}={{ $value }}
+            {{- end }}
           {{- end }}
           volumeMounts:
             {{- if .Values.extraVolumeMounts }}
